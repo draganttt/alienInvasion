@@ -2,17 +2,23 @@ import pygame
 
 class Ship():
 
-    def __init__(self, screen):
+	def __init__(self, screen):
 
-        self.screen = screen
+		self.screen = screen
 
-        self.image = pygame.image.load('C://alienInvasion\images\ship.bmp')
-        self.rect = self.image.get_rect()
-        self.screen_rect = screen.get_rect()
+		self.image = pygame.image.load('C://alienInvasion\images\ship.bmp')
+		self.rect = self.image.get_rect()
+		self.screen_rect = screen.get_rect()
 
-        self.rect.centerx = self.screen_rect.centerx
-        self.rect.bottom = self.screen_rect.bottom
+		self.rect.centerx = self.screen_rect.centerx
+		self.rect.bottom = self.screen_rect.bottom
+		#Moving ship
+		self.moving_right = False
+	
+	def update(self):
+		#Update ship positions based on movement flag
+		if self.moving_right:
+			self.rect.centerx += 1
 
-    def blitme(self):
-
-        self.screen.blit(self.image, self.rect)
+	def blitme(self):
+		self.screen.blit(self.image, self.rect)
