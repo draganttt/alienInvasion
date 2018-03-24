@@ -12,6 +12,7 @@ def run_game():
 	pygame.display.set_caption("Alien Invasion")
 	ship = Ship(ai_settings, screen)
 	bullets = Group()
+	aliens = Group()
 	alien = Alien(ai_settings, screen)
 	# Start the main loop for the game.
 
